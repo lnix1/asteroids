@@ -43,6 +43,10 @@ def main():
             if obj.collision_check(player):
                 print("Game Over!")
                 sys.exit()
+            for shot in shots:
+                if obj.collision_check(shot):
+                    obj.split()
+                    shot.kill()
 
         for obj in drawable:
             obj.draw(screen)
